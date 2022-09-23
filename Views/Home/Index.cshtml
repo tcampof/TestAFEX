@@ -1,0 +1,52 @@
+﻿@model List<Videos.Models.Video>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            @using (Html.BeginForm("create", "Home", FormMethod.Get))
+            {
+                <div class="input-group mb-3">
+                    @Html.TextBox("Link", null, new { @class = "form-control" })
+                    <input class="btn btn-primary" type="submit" value="Añadir">
+                </div>
+
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <img style="width:100%; height:225px" src="@(String.Format("https://img.youtube.com/vi/{0}/hqdefault.jpg", item.id))" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9 justify-content-md-center">
+                                            @item.id
+                                            <iframe id="cartoonVideo" class="embed-responsive-item" style="width:100%" height="315" src="@Url.Content(String.Format("//www.youtube.com/embed/{0}", item.id))" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

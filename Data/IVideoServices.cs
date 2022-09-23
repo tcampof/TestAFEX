@@ -1,0 +1,13 @@
+﻿using Videos.Models;
+
+namespace Videos.Data
+{
+    public interface IVideoServices
+    {
+        public Task<List<Video>> Create(string idVideo);
+        public List<Video> GetAll();
+        public Task<bool> Delete(int Id);
+
+        public Task<Video> Get(int Id);
+    }
+}
