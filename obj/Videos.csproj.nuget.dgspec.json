@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\desar\\OneDrive\\Documentos\\Tomas Campo\\Development\\Videos\\Videos.csproj": {}
+    "C:\\Users\\Tomás Campo\\Documents\\GitHub\\TestAFEX\\Videos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\desar\\OneDrive\\Documentos\\Tomas Campo\\Development\\Videos\\Videos.csproj": {
+    "C:\\Users\\Tomás Campo\\Documents\\GitHub\\TestAFEX\\Videos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\desar\\OneDrive\\Documentos\\Tomas Campo\\Development\\Videos\\Videos.csproj",
+        "projectUniqueName": "C:\\Users\\Tomás Campo\\Documents\\GitHub\\TestAFEX\\Videos.csproj",
         "projectName": "Videos",
-        "projectPath": "C:\\Users\\desar\\OneDrive\\Documentos\\Tomas Campo\\Development\\Videos\\Videos.csproj",
-        "packagesPath": "C:\\Users\\desar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\desar\\OneDrive\\Documentos\\Tomas Campo\\Development\\Videos\\obj\\",
+        "projectPath": "C:\\Users\\Tomás Campo\\Documents\\GitHub\\TestAFEX\\Videos.csproj",
+        "packagesPath": "C:\\Users\\Tomás Campo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tomás Campo\\Documents\\GitHub\\TestAFEX\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\desar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tomás Campo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,8 +67,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -80,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

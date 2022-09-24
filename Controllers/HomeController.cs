@@ -32,6 +32,7 @@ public class HomeController : Controller
     public async Task<IActionResult> Create(string link)
     { 
         var result = await this.services.Create(link);
+        ModelState.Clear();
         return View("Index", result);
     }
 
@@ -39,5 +40,12 @@ public class HomeController : Controller
     {
         var result = await this.services.Get(Id);
         return View("Index");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var result = await this.services.Delete(id);
+        return View("Index", result);
     }
 }

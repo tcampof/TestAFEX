@@ -6,7 +6,7 @@ namespace Videos.Data
     {
         public Task<List<Video>> Create(string idVideo);
         public List<Video> GetAll();
-        public Task<bool> Delete(int Id);
+        public Task<List<Video>> Delete(int Id);
 
         public Task<Video> Get(int Id);
     }

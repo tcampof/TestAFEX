@@ -8,8 +8,9 @@
         <div class="col-md-6">
             @using (Html.BeginForm("create", "Home", FormMethod.Get))
             {
+                <label for="basic-url" class="form-label fw-bold">Añadir nuevo video</label>
                 <div class="input-group mb-3">
-                    @Html.TextBox("Link", null, new { @class = "form-control" })
+                    @Html.TextBox("Link", null, new { @class = "form-control", @placeholder = "Añadir" })
                     <input class="btn btn-primary" type="submit" value="Añadir">
                 </div>
 
@@ -24,9 +25,10 @@
                     {
                         <div class="col">
                             <div class="card shadow-sm">
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <a id="data-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#" onclick="myFunction('@item.id')">
                                     <img style="width:100%; height:225px" src="@(String.Format("https://img.youtube.com/vi/{0}/hqdefault.jpg", item.id))" />
                                 </a>
+                                <a href="~/Home/Delete/@item.id_videos" class="btn btn-danger btn-sm">Eliminar video</a>
                             </div>
                         </div>
 
@@ -36,9 +38,11 @@
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         <div class="embed-responsive embed-responsive-16by9 justify-content-md-center">
-                                            @item.id
-                                            <iframe id="cartoonVideo" class="embed-responsive-item" style="width:100%" height="315" src="@Url.Content(String.Format("//www.youtube.com/embed/{0}", item.id))" allowfullscreen></iframe>
+                                            <iframe id="cartoonVideo" class="embed-responsive-item" style="width:100%" height="315" allowfullscreen></iframe>
                                         </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div id="Description"></div>
                                     </div>
                                 </div>
                             </div>
@@ -49,4 +53,15 @@
         </div>
     </div>
 </div>
+
+    <script>
+        function myFunction(id) {
+            var url = '//www.youtube.com/embed/'+id
+            $('#cartoonVideo').attr('src', url)
+            var gdata = document.createElement("script");
+            gdata.src = "http://gdata.youtube.com/feeds/api/videos/" + id + "?v=2&alt=jsonc&callback=storeInfo";
+            var body = document.getElementsByTagName("body")[0];
+            body.appendChild(gdata);
+        }
+    </script>
 

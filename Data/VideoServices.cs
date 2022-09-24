@@ -31,7 +31,7 @@ namespace Videos.Data
                         _context.Videos.Add(_video);
                         await _context.SaveChangesAsync();
                     }
-                    var result = _context.Videos.OrderByDescending(v => v.id_videos).ToList();
+                    var result = this.GetAll();
                     return result;
                 }
             }
@@ -41,7 +41,7 @@ namespace Videos.Data
             }
         }
 
-        public async Task<bool> Delete(int Id)
+        public async Task<List<Video>> Delete(int Id)
         {
             try
             {
@@ -49,11 +49,11 @@ namespace Videos.Data
                 _context.Videos.Remove(video);
                 _context.SaveChanges();
 
-                return true;
+                return this.GetAll();
             }
             catch (Exception)
             {
-                return false;
+                return null;
             }
         }
 
